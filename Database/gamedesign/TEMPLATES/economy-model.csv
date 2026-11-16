@@ -1,0 +1,18 @@
+kind,currency,name,formula_or_value,per,notes,unlock_day
+source,soft,passive_income,base_income_per_minute * (1 + 0.5 * level),minute,основной приток; растёт от апгрейдов,1
+source,soft,level_reward,50..80 в зависимости от сложности,level_win,делить на attempt rate для реального притока,1
+source,soft,offline_income,income_rate * min(elapsed_h; 4) * 0.4,session,экран при входе обязателен,1
+source,soft,rewarded_ad,income_rate * 1..2 минуты,ad_view,ориентир: одна реклама = 0.5-2 мин добычи,1
+source,soft,daily_bonus,income_rate * 2 минуты,day,растущая цепочка входов,1
+source,soft,quest_reward,,day,,3
+source,hard,daily_free_gems,3..5,day,,1
+source,hard,level_milestone,10..25,every_10_levels,,1
+source,hard,iap_pack,,purchase,курс к soft задаётся один раз,1
+sink,soft,upgrade_cost,base_cost * 1.12^n,purchase,главный сток; держать время до покупки 20-60 сек,1
+sink,soft,unlock_feature,,milestone,видимая запертая фича как цель,5
+sink,soft,consumable_booster,,purchase,не должен становиться обязательным,7
+sink,hard,speedup,,purchase,продаём время,3
+sink,hard,extra_lives,,purchase,привязан к attempt rate уровней,2
+sink,hard,cosmetic,,purchase,сток для тех кто не хочет ускорений,14
+stock,soft,wallet,,-,сколько копится между покупками,1
+stock,resource,energy,max 5 / regen 20 мин,-,регулирует длину сессии,1
